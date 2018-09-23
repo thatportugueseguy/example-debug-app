@@ -1,0 +1,27 @@
+body {
+  background: #538cb5;
+}
+.app-container {
+  background: #fff;
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 40px 25px;
+}
+
+h3 {
+  color: #538cb5;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+input {
+  margin: 20px 0;
+}
+
+.url {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+}
