@@ -2,6 +2,7 @@ const app = require('./app');
 const debug = require('debug')('express:server');
 const http = require('http');
 
+const runningEnv = process.env.NODE_ENV || 'development';
 const port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
@@ -12,7 +13,7 @@ server.on('error', onError);
 server.on('listening', function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-  console.log(`Listening on ${bind}`);
+  console.log(`${runningEnv}: Listening on ${bind}`);
 });
 
 function normalizePort(val) {

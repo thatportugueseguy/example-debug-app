@@ -4,7 +4,7 @@ const path = require('path');
 
 const apiRouter = require('./routes/api');
 const app = express();
-const runningEnv = process.env.NODE_ENV;
+const runningEnv = process.env.NODE_ENV || 'development';
 
 app.use(logger('dev'));
 app.use(function(_, res, next) {

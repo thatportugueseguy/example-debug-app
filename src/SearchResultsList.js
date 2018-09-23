@@ -8,10 +8,6 @@ export default function SearchResultsList(props) {
   return <div className="list-group">{rows}</div>;
 }
 
-SearchResultsList.defaultProps = {
-  results: [],
-};
-
 function SearchResult(props) {
   const { title, created_at, points, url } = props.result;
   return (

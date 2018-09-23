@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   handleSearch = searchTerm =>
-    // let url = 'http://localhost:3001/api/hn/' + searchTerm;
     fetch('api/hn/' + searchTerm)
       .then(response => {
         if (!response.ok) {

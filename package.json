@@ -19,7 +19,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "concurrently --kill-others-on-fail \"yarn start\" \"yarn start:server:dev\"",
-    "prod": "yarn build && NODE_ENV=production PORT=3000 yarn start:server"
+    "prod": "yarn build && yarn start:server"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
