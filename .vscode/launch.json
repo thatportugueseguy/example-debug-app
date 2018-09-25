@@ -7,10 +7,35 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch in Docker",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "docker-debug"],
+      "port": 5858,
+      "restart": true,
+      "timeout": 60000,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/app",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Server",
       "runtimeExecutable": "nodemon",
       "program": "${workspaceFolder}/server/index.js",
       "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Debug CRA Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
+      "args": ["test", "--runInBand", "--no-cache", "--env=jsdom"],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -20,6 +45,12 @@
       "name": "Client",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Client",
+      "url": "http://localhost:3000"
     }
   ],
   "compounds": [

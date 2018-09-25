@@ -3,7 +3,9 @@ const debug = require('debug')('express:server');
 const http = require('http');
 
 const runningEnv = process.env.NODE_ENV || 'development';
-const port = normalizePort(process.env.PORT || '3001');
+
+// NODE_PORT is a hack for debugging on docker so that it doesn't trample CRA
+const port = normalizePort(process.env.NODE_PORT || process.env.PORT || '3001');
 app.set('port', port);
 
 const server = http.createServer(app);

@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <h3>Search Hacker News</h3>
+        <h3>Hello Search Hacker News</h3>
         <SearchBar handleSubmit={this.handleSearch} />
         <SearchResultList results={this.state.searchResults} />
       </div>

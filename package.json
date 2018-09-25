@@ -15,15 +15,23 @@
     "start": "react-scripts start",
     "start:server": "node server/index.js",
     "start:server:dev": "nodemon server/index.js",
+    "start:server:debug": "nodemon --inspect=0.0.0.0:5858 server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "concurrently --kill-others-on-fail \"yarn start\" \"yarn start:server:dev\"",
-    "prod": "yarn build && yarn start:server"
+    "prod": "yarn build && yarn start:server",
+    "debug": "concurrently --kill-others-on-fail \"yarn start\" \"yarn start:server:debug\"",
+    "docker-debug": "docker-compose up"
   },
   "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "concurrently": "^4.0.1",
-    "nodemon": "^1.18.4"
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "react-test-renderer": "^16.5.2"
   },
   "proxy": "http://localhost:3001/",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",

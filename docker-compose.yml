@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    environment:
+      - NODE_PORT=3001
+    command: bash -c "yarn global add concurrently nodemon && npm run debug"
+    volumes:
+      - ./src:/app/src
+    ports:
+      - '3000:3000'
+      - '5858:5858'
