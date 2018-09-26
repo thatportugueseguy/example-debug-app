@@ -45,18 +45,12 @@
       "name": "Client",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
-    },
-    {
-      "type": "chrome",
-      "request": "launch",
-      "name": "Client",
-      "url": "http://localhost:3000"
     }
   ],
   "compounds": [
     {
       "name": "Server/Client",
-      "configurations": ["Server", "Client"]
+      "configurations": ["Server", "Client", "Launch cra"]
     }
   ]
 }

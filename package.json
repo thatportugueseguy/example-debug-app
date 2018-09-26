@@ -25,11 +25,7 @@
     "docker-debug": "docker-compose up"
   },
   "devDependencies": {
-    "babel-jest": "^23.6.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "concurrently": "^4.0.1",
-    "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "react-test-renderer": "^16.5.2"
   },

@@ -5,7 +5,7 @@ services:
     build: .
     environment:
       - NODE_PORT=3001
-    command: bash -c "yarn global add concurrently nodemon && npm run debug"
+    command: sh -c "yarn global add concurrently nodemon && npm run debug"
     volumes:
       - ./src:/app/src
     ports:
