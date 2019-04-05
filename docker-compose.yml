@@ -8,6 +8,7 @@ services:
     command: sh -c "yarn global add concurrently nodemon && npm run debug"
     volumes:
       - ./src:/app/src
+      - ./server:/app/server
     ports:
       - '3000:3000'
       - '5858:5858'

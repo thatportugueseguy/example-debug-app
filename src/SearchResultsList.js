@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SearchResultsList(props) {
   var rows = [];
-  props.results.map((searchResult, index) =>
+  props.results.forEach((searchResult, index) =>
     rows.push(<SearchResult key={index} result={searchResult} />)
   );
   return <div className="list-group">{rows}</div>;

@@ -8,6 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch in Docker",
+      "preLaunchTask": "docker-build",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "docker-debug"],
       "port": 5858,
@@ -33,7 +34,13 @@
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
-      "args": ["test", "--runInBand", "--no-cache", "--env=jsdom"],
+      "args": [
+        "test",
+        "--runInBand",
+        "--no-cache",
+        "--no-watch",
+        "--env=jsdom"
+      ],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
       "console": "integratedTerminal",
@@ -50,7 +57,7 @@
   "compounds": [
     {
       "name": "Server/Client",
-      "configurations": ["Server", "Client", "Launch cra"]
+      "configurations": ["Server", "Client"]
     }
   ]
 }

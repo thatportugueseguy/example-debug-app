@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { log, error } = console;
 const fetch = require('node-fetch');
+const fs = require('fs');
+
 let HNApiUrl = 'https://hn.algolia.com/api/v1/search?query=';
 
 router.get('/hn/:HNQuery', function(req, res) {
@@ -30,6 +32,22 @@ router.get('/hn/:HNQuery', function(req, res) {
       error(`Error fetching results: ${err.message}`);
       return res.sendStatus(500);
     });
+});
+
+// Dinamically loading some routes. Because we can.
+fs.readdir(`${__dirname}/blob`, (err, files) => {
+  if (err) throw err;
+
+  files.forEach(fileName => {
+    const {
+      routePath,
+      routeMethod,
+      routeHandler,
+    } = require(`./blob/${fileName}`);
+
+    // register the route
+    router[routeMethod](routePath, routeHandler);
+  });
 });
 
 module.exports = router;

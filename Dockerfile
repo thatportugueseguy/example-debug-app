@@ -1,11 +1,13 @@
-FROM node:8-alpine
+FROM node:10-alpine
 
 WORKDIR /app
 
-COPY . /app
+COPY package.json /app
 
 ENV NODE_ENV=production
-RUN yarn
+RUN npm install
+
+COPY . /app
 
 EXPOSE 3000
-CMD [ "yarn", "prod" ]
+CMD [ "npm", "run", "prod" ]
