@@ -47,6 +47,12 @@
       "internalConsoleOptions": "neverOpen"
     },
     {
+      "type": "browser-preview",
+      "request": "launch",
+      "name": "Browser preview: launch",
+      "url": "http://localhost:3000"
+    },
+    {
       "type": "chrome",
       "request": "launch",
       "name": "Client",
