@@ -1,9 +1,9 @@
-// porque não loga hey Amy?
-function greet (person) {
+// Why is it not logging 'hey Amy'?
+function greet(person) {
   if (person == { name: 'amy' }) {
-    return 'hey amy'
+    return 'hey amy';
   } else {
-    return 'hey arnold'
+    return 'hey arnold';
   }
 }
-console.log(greet({ name: 'amy' }))
+console.log(greet({ name: 'amy' }));

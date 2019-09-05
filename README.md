@@ -13,6 +13,4 @@ This allows to demonstrate debugging in:
 
 # TODO
 
-- dockerize it
-- add vscode debug configs
-- add tests
+- Add more tests
